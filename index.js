@@ -10,9 +10,14 @@ router.get("/", (request, response) => {
   console.log(request.params);
 
   const tortilla = {
-    huevos: 3,
+    huevos: 4,
     patatas: "Muchas",
     punto: "poco",
+    materialCocina: {
+      sarten: 2,
+      ollas: false,
+      espatula: true,
+    },
   };
 
   //   console.log(response);      Procesamos la informacion y enviamos el resultado
@@ -33,5 +38,5 @@ router.get("/huevos-fritos", (request, response) => {
 server.use("/", router);
 
 server.listen(PORT, () => {
-  console.log(`Servidor a toda maquina en http://localhost:${PORT}`);
+  console.log(`Servidor iniciado en http://localhost:${PORT}`);
 });
